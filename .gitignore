@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+dist/
+
+# React build output
+front/build/
+.front/
+
+# Environment variables
+.env
+
+# Editor directories and files
+.vscode/
+.idea/

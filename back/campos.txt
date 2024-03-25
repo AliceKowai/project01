@@ -1,0 +1,13 @@
+    => Deve ter no minimo 3 caracteres e no maximo 22
+    firstName: string
+    => Deve ter no minimo 3 caracteres e no maximo 50
+    lastName: string
+    => A data deve ser separada por traço e ter no formato YYYY-mm-dd
+    dateOfBirth: string
+    => Não pode estar vazio e deve ter um @ e um .com
+    email: string
+    => cpf deve ter no minimo 11 caracteres, não podendo ter traços, espaços e pontos
+    cpf: string
+    => A senha deve ter pelo menos 6 caracteres e conter uma letra maiuscula e um número
+    password: string
+    permission: string
