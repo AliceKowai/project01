@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "car" ALTER COLUMN "year" DROP NOT NULL;

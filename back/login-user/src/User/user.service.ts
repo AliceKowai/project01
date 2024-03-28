@@ -1,4 +1,4 @@
-import { Injectable, ConflictException } from "@nestjs/common";
+import { Injectable, ConflictException, NotFoundException } from "@nestjs/common";
 import { CreateUserDTO } from "./dto/create-users.dto";
 import { PrismaService } from "../prisma/prisma.service";
 import { UpdateUserSTO } from "./dto/update-users.dto";
@@ -75,6 +75,16 @@ export class UsersService {
                 id,
             }
         })
+    }
+    async delete(id: number) {
+        if (!(await this.show(id))) {
+            throw new NotFoundException(`Usuário ${id} não encontrado!`)
+        }
+        return this.prisma.user_login.delete({
+            where: {
+                id
+            }
+        }) 
     }
     
 }

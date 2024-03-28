@@ -23,3 +23,19 @@ model user_login{
         password String
         permission String
 }
+
+model car {
+  id Int @id @default(autoincrement())
+  name String
+  brand String
+  model String
+  year String
+  km String
+  exteriorColor String
+  fuelType String
+  transmission String
+  entertainment String
+  safety String
+  details String
+  favorite Boolean?
+}

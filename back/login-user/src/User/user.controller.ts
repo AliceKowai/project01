@@ -28,7 +28,7 @@ export class UserController{
         return this.usersService.updatePartial(id,data)
     }
     @Delete(':id')
-    async delete(@Param('id', ParseIntPipe)id:number){
-        return {id}
+    async  delete(@Param('id', ParseIntPipe) id: number) {
+        return this.usersService.delete(id)
     }
 }

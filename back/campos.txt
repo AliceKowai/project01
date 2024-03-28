@@ -1,3 +1,5 @@
+    ****************** CAMPOS ***************************
+    ---------------  USUARIO  ----------------------
     => Deve ter no minimo 3 caracteres e no maximo 22
     firstName: string
     => Deve ter no minimo 3 caracteres e no maximo 50
@@ -5,9 +7,50 @@
     => A data deve ser separada por traço e ter no formato YYYY-mm-dd
     dateOfBirth: string
     => Não pode estar vazio e deve ter um @ e um .com
-    email: string
+    email: string -unico
     => cpf deve ter no minimo 11 caracteres, não podendo ter traços, espaços e pontos
-    cpf: string
+    cpf: string -unico
     => A senha deve ter pelo menos 6 caracteres e conter uma letra maiuscula e um número
     password: string
     permission: string
+
+    OBS: COMO O EMAIL E O CPF SÃO ÚNICOS, SERIA ADEQUADO USÁ-LOS PARA FAZER O LOGIN.
+
+    ----------------------  CARROS  ----------------------------
+
+    => O nome deve conter pelo menos 3 caracteres no maximo 50
+    name: string
+    => O nome deve conter pelo menos 3 caracteres no maximo 50
+    brand:string
+    model:string
+    year: string
+    => Por favor, coloque um quilometragem válida  
+    km: string   ---Ainda vou colocar como number---
+    => Por favor, coloque uma cor válida
+    exteriorColor: string
+    => Por favor, coloque uma tipo de conbustivel válido
+    fuelType: string
+    => Por favor, coloque um cambio válido, ex: cambio automatico
+    transmission: string
+    => Por favor, coloque o acessorios de entrenimento do seu carro, ex: som esterio, televisor 14 polegadas
+    entertainment: string
+    => Por favor, adicione o sistema de segurança do seu carro, ex:alarme, localizador
+    safety: string
+    => Digite os detalhes do seu veiculo
+    details: string
+    => NÃO USAR
+    favorite?: boolean  ---- Ainda não usar, pois ainda não está pronto ---
+
+    *******************************************************************************
+    ****************************  ROTAS *******************************************
+    USUARIOS = "/users"
+    Carros = "/cars"
+    Pesquisa marca e modelo ="/cars/search"
+
+    ***************************************************************************
+    O que falta: Por favor, anotar aqui o que você deseja adicionar na API
+
+    * UPLOAD de imagens dos Carros
+    * Não consegui testar a Pesquisa
+    * Implementar o favorite, até agora só tem um campo na tabela, impossivel adicionar valor
+
