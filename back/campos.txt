@@ -24,19 +24,12 @@
     brand:string
     model:string
     year: string
-    => Por favor, coloque um quilometragem válida  
     km: string   ---Ainda vou colocar como number---
-    => Por favor, coloque uma cor válida
     exteriorColor: string
-    => Por favor, coloque uma tipo de conbustivel válido
     fuelType: string
-    => Por favor, coloque um cambio válido, ex: cambio automatico
     transmission: string
-    => Por favor, coloque o acessorios de entrenimento do seu carro, ex: som esterio, televisor 14 polegadas
     entertainment: string
-    => Por favor, adicione o sistema de segurança do seu carro, ex:alarme, localizador
     safety: string
-    => Digite os detalhes do seu veiculo
     details: string
     => NÃO USAR
     favorite?: boolean  ---- Ainda não usar, pois ainda não está pronto ---
