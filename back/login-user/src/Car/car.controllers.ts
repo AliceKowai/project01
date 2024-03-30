@@ -19,14 +19,10 @@ export class CarController{
     async readOnly(@Param('id', ParseIntPipe) id:number){
         return this.carsService.show(id)
     }
-    @Get('search')
-    async searchByName(@Query('name') name: string) {
-        return this.carsService.searchByName(name);
-    }
-    @Get('search')
-    async searchByModel(@Query('model') model: string) {
-        return this.carsService.searchByModel(model);
-    }
+    // @Get('search')
+    // async searchByName(@Query('name') name: string) {
+    //     return this.carsService.searchByName(name);
+    // }
     @Put(':id')
     async update(@Body() data: UpdateCarDTO, @Param('id', ParseIntPipe) id:number){
         return this.carsService.update(id,data)
@@ -39,4 +35,5 @@ export class CarController{
     async delete(@Param('id', ParseIntPipe)id:number){
         return this.carsService.delete(id)
     }
+
 }

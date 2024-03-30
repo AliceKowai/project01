@@ -31,4 +31,16 @@ export class UserController{
     async  delete(@Param('id', ParseIntPipe) id: number) {
         return this.usersService.delete(id)
     }
+    @Get(':userId/favorite')
+    async listFavoriteCar(@Param('userId', ParseIntPipe) userId: number) {
+        return this.usersService.listFavorite(userId);
+    }
+    @Post(':userId/favorite/:carId')
+    async addFavoriteCar(@Param('userId', ParseIntPipe) id: number, @Param('carId', ParseIntPipe) carId: number) {
+        return this.usersService.addFavoriteCar(id, carId);
+    }
+    @Delete(':userId/favorite/:carId')
+    async removeFavoriteCar(@Param('userId') userId: number, @Param('carId') carId: number) {
+        return this.usersService.removeFavoriteCar(userId, carId);
+    }
 }

@@ -13,7 +13,7 @@
     => A senha deve ter pelo menos 6 caracteres e conter uma letra maiuscula e um número
     password: string
     permission: string
-
+.
     OBS: COMO O EMAIL E O CPF SÃO ÚNICOS, SERIA ADEQUADO USÁ-LOS PARA FAZER O LOGIN.
 
     ----------------------  CARROS  ----------------------------
@@ -24,21 +24,23 @@
     brand:string
     model:string
     year: string
-    km: string   ---Ainda vou colocar como number---
+    km: string 
     exteriorColor: string
     fuelType: string
     transmission: string
     entertainment: string
     safety: string
     details: string
-    => NÃO USAR
-    favorite?: boolean  ---- Ainda não usar, pois ainda não está pronto ---
+    location String
+    price String
+    imagens ImageCarro[] <<<<---- NÃO USAR
+    urlImage String
+    favorite: boolean
 
     *******************************************************************************
     ****************************  ROTAS *******************************************
     USUARIOS = "/users"
     Carros = "/cars"
-    Pesquisa marca e modelo ="/cars/search"
 
     ***************************************************************************
     O que falta: Por favor, anotar aqui o que você deseja adicionar na API

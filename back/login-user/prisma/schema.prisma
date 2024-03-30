@@ -13,29 +13,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user_login{
-        id Int @id @default(autoincrement())
-        firstName String
-        lastName String
-        dateOfBirth String
-        email String @unique
-        cpf String @unique
-        password String
-        permission String
+model user_login {
+  id           Int    @id @default(autoincrement())
+  firstName    String
+  email        String @unique
+  password     String
+  favoriteCars car[]
 }
 
 model car {
-  id Int @id @default(autoincrement())
-  name String
-  brand String
-  model String
-  year String
-  km String
+  id            Int          @id @default(autoincrement())
+  name          String
+  brand         String
+  model         String
+  year          String
+  km            String
   exteriorColor String
-  fuelType String
-  transmission String
+  fuelType      String
+  transmission  String
   entertainment String
-  safety String
-  details String
-  favorite Boolean?
+  safety        String
+  details       String
+  location      String
+  price         String
+  imagens       ImageCarro[]
+  urlImage      String
+  users         user_login[]
+}
+
+
+model ImageCarro {
+  id    Int    @id @default(autoincrement())
+  car   car    @relation(fields: [carId], references: [id])
+  carId Int
+  url   String
 }

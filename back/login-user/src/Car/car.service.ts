@@ -3,14 +3,12 @@ import { PrismaService } from "../prisma/prisma.service";
 import { CreateCarDTO } from "./dto/create-car.dto";
 import { UpdateCarDTO } from "./dto/uptade-car.dto";
 import { UpdatePartialCarDTO } from "./dto/update-partial-car.dto";
-import { log } from "console";
 @Injectable()
 export class CarsService {
     constructor(private readonly prisma: PrismaService) {
-
     }
 
-    async create({name, brand, model, year, km, exteriorColor,fuelType,transmission, entertainment, safety, details, favorite}: CreateCarDTO) {
+    async create({name, brand, model, year, km, exteriorColor,fuelType,transmission, entertainment, safety, details, price, location, urlImage}: CreateCarDTO) {
         return this.prisma.car.create({
             data: {
                 name,
@@ -24,7 +22,9 @@ export class CarsService {
                 entertainment,
                 safety,
                 details,
-                favorite,
+                price,
+                location,
+                urlImage,
             }
         })
     }
@@ -99,3 +99,4 @@ export class CarsService {
     }
 
 }
+

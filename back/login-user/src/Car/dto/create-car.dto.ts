@@ -1,6 +1,8 @@
-import { MinLength,MaxLength, IsBooleanString, IsNumberString, IsString, IsDate, IsOptional} from "class-validator"
+import { MinLength,MaxLength, IsBooleanString, IsNumberString, IsString, IsDate, IsOptional, IsInt, IsNumber} from "class-validator"
+import { CarEntity } from "../entities/car.entity"
+import { Prisma } from "@prisma/client"
 
-export class CreateCarDTO{
+export class CreateCarDTO extends CarEntity{
     @MinLength(3,{message:"O nome deve conter pelo menos 3 caracteres"})
     @MaxLength(50,{message:"O nome não deve ultrapassar 50 caracteres"})
     @IsString({message:"Nome Inválido"})
@@ -13,6 +15,7 @@ export class CreateCarDTO{
     @IsString()
     model:string
     @IsString()
+    @IsOptional()
     year: string
     @IsNumberString(undefined,{message:"Por favor, coloque um quilometragem válida"})
     km: string
@@ -28,7 +31,13 @@ export class CreateCarDTO{
     safety: string
     @IsString({message:"Digite os detalhes do seu veiculo"})
     details: string
-    @IsBooleanString({message: "Valor booleano"})
+    @IsString()
     @IsOptional()
-    favorite?: boolean
+    price: string
+    @IsString()
+    location: string
+    @IsOptional()
+    imagens?: Prisma.ImageCarroUncheckedCreateNestedManyWithoutCarInput;
+    @IsString()
+    urlImage: string
 } 
