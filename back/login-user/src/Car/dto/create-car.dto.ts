@@ -15,9 +15,8 @@ export class CreateCarDTO extends CarEntity{
     @IsString()
     model:string
     @IsString()
-    @IsOptional()
     year: string
-    @IsNumberString(undefined,{message:"Por favor, coloque um quilometragem válida"})
+    @IsString({message:"Por favor, coloque um quilometragem válida"})
     km: string
     @IsString({message:"Por favor, coloque uma cor válida"})
     exteriorColor: string
@@ -32,7 +31,6 @@ export class CreateCarDTO extends CarEntity{
     @IsString({message:"Digite os detalhes do seu veiculo"})
     details: string
     @IsString()
-    @IsOptional()
     price: string
     @IsString()
     location: string

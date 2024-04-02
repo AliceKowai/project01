@@ -15,7 +15,7 @@ datasource db {
 
 model user_login {
   id           Int    @id @default(autoincrement())
-  firstName    String
+  username    String @unique
   email        String @unique
   password     String
   favoriteCars car[]

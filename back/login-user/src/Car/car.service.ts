@@ -63,12 +63,7 @@ export class CarsService {
         })
     }
     async update(id:number, data:UpdateCarDTO){
-        if(!(await this.show(id))){
-            console.log('cu');
-            throw new NotFoundException(`carro não encontrado id:${id}`)
-            
-        }
-        return this.prisma.user_login.update({
+        return this.prisma.car.update({
             data,
             where:{
                 id,
@@ -77,9 +72,6 @@ export class CarsService {
     }
 
     async updatePartial(id:number, data:UpdatePartialCarDTO){
-        if(!(await this.show(id))){
-            throw new NotFoundException(`carro não encontrado id:${id}`)
-        }
         return this.prisma.car.update({
             data,
             where:{
@@ -88,9 +80,6 @@ export class CarsService {
         })
     }
     async delete(id:number){
-        if(!(await this.show(id))){
-            throw new NotFoundException(`carro não encontrado id:${id}`)
-        }
         return this.prisma.car.delete({
             where:{
                 id

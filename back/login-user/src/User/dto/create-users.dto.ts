@@ -1,10 +1,11 @@
-import { IsString, IsEmail, IsStrongPassword, IsDateString, MinLength, MaxLength, IsNotEmpty} from "class-validator";
+import { IsString, IsEmail, IsStrongPassword,  MinLength, MaxLength} from "class-validator";
 
 export class CreateUserDTO{
     @MinLength(3,{message:"O nome deve conter pelo menos 3 caracteres"})
     @MaxLength(22,{message:"O nome não deve ultrapassar 22 caracteres"})
     @IsString({message:"Nome Inválido"})
-    firstName: string
+    username: string
+    @IsEmail(undefined,{message:"Digite um email válido"})
     email: string
     @IsStrongPassword({
         minLength: 6,

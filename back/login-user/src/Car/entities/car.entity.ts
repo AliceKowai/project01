@@ -2,7 +2,6 @@ import {Prisma} from '@prisma/client'
 
 
 export class CarEntity implements Prisma.carUncheckedCreateInput{
-    id?: number
     name: string
     brand: string
     model: string

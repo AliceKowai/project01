@@ -3,6 +3,7 @@ import { CreateUserDTO } from "./dto/create-users.dto";
 import { UsersService } from "./user.service";
 import { UpdateUserSTO } from "./dto/update-users.dto";
 import { UpdatePartialUserDTO } from "./dto/update-partial-user.dto";
+import { LoginUserDTO } from "./dto/login.dto";
 
 @Controller('users')
 export class UserController{
@@ -10,6 +11,10 @@ export class UserController{
     @Post()
     async create(@Body() data:CreateUserDTO){
         return this.usersService.create(data)
+    }
+    @Post('login')
+    async login(@Body() data:LoginUserDTO){
+        return this.usersService.login(data)
     }
     @Get()
     async read(){

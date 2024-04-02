@@ -1,7 +1,7 @@
     ****************** CAMPOS ***************************
     ---------------  USUARIO  ----------------------
     => Deve ter no minimo 3 caracteres e no maximo 22
-    firstName: string
+    username: string
     => Deve ter no minimo 3 caracteres e no maximo 50
     lastName: string
     => A data deve ser separada por traço e ter no formato YYYY-mm-dd
