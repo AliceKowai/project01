@@ -45,7 +45,7 @@ export class UserController{
         return this.usersService.addFavoriteCar(id, carId);
     }
     @Delete(':userId/favorite/:carId')
-    async removeFavoriteCar(@Param('userId') userId: number, @Param('carId') carId: number) {
+    async removeFavoriteCar(@Param('userId', ParseIntPipe) userId: number, @Param('carId', ParseIntPipe) carId: number) {
         return this.usersService.removeFavoriteCar(userId, carId);
     }
 }

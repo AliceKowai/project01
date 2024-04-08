@@ -16,5 +16,9 @@ export class CarEntity implements Prisma.carUncheckedCreateInput{
     location: string
     price: string
     imagens?: Prisma.ImageCarroUncheckedCreateNestedManyWithoutCarInput
-    urlImage: string
+    urlImage1: string
+    urlImage2: string
+    urlImage3: string
+
+
 }

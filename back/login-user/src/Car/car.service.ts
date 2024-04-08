@@ -8,7 +8,7 @@ export class CarsService {
     constructor(private readonly prisma: PrismaService) {
     }
 
-    async create({name, brand, model, year, km, exteriorColor,fuelType,transmission, entertainment, safety, details, price, location, urlImage}: CreateCarDTO) {
+    async create({name, brand, model, year, km, exteriorColor,fuelType,transmission, entertainment, safety, details, price, location, urlImage1, urlImage2, urlImage3}: CreateCarDTO) {
         return this.prisma.car.create({
             data: {
                 name,
@@ -24,7 +24,9 @@ export class CarsService {
                 details,
                 price,
                 location,
-                urlImage,
+                urlImage1,
+                urlImage2,
+                urlImage3
             }
         })
     }

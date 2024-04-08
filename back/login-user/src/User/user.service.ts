@@ -44,18 +44,14 @@ export class UsersService {
         const existingUser = await this.prisma.user_login.findUnique({
             where: { username },
         });
+        
         //Se não encontrar o username
         if (!existingUser) {
             throw new ConflictException('usuario não encontrado');
         }
         if (existingUser) {
             if (existingUser.password == password) {
-                return {
-                    data: {
-                        username,
-                        password,
-                    }
-                }
+                return {response: existingUser}
             } else {
                 throw new ConflictException('Senha errada'); //se a não senha corresponder
 
@@ -119,10 +115,11 @@ export class UsersService {
         return user.id
     }
     async removeFavoriteCar(userId: number, carId: number) {
-        const user = await this.show(userId);
+        // const user = await this.show(userId);
         await this.prisma.user_login.update({
             where: { id: userId },
             data: { favoriteCars: { disconnect: { id: carId } } },
         });
+        console.log({userId, carId})
     }
 }

@@ -37,7 +37,9 @@ model car {
   location      String
   price         String
   imagens       ImageCarro[]
-  urlImage      String
+  urlImage1 String
+  urlImage2 String
+  urlImage3 String
   users         user_login[]
 }
 

@@ -37,5 +37,12 @@ export class CreateCarDTO extends CarEntity{
     @IsOptional()
     imagens?: Prisma.ImageCarroUncheckedCreateNestedManyWithoutCarInput;
     @IsString()
-    urlImage: string
+    @IsOptional()
+    urlImage1: string
+    @IsString()
+    @IsOptional()
+    urlImage2: string
+    @IsString()
+    @IsOptional()
+    urlImage3: string
 } 
